@@ -1,12 +1,13 @@
 {
-  "name": "fx",
+  "name": "cox",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/fx.min.js",
-  "module": "dist/fx.es.js",
+  "main": "dist/cox.min.js",
+  "module": "dist/cox.es.js",
+  "types": "type/index.d.ts",
   "scripts": {
-    "start": "rollup -cw",
-    "declaration": "tsc --declaration --declarationDir . --outDir temp ./src/index.ts",
+    "build": "rollup -c",
+    "declaration": "tsc --declaration --declarationDir type --outDir . ./src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "browserslist": [
@@ -16,20 +17,10 @@
   "author": "JetLu",
   "license": "MIT",
   "devDependencies": {
-    "@babel/core": "^7.7.2",
-    "@babel/plugin-proposal-class-properties": "^7.7.0",
-    "@babel/plugin-transform-runtime": "^7.6.2",
-    "@babel/plugin-transform-typescript": "^7.7.2",
-    "@babel/preset-env": "^7.7.1",
-    "@babel/preset-typescript": "^7.7.2",
-    "@babel/runtime": "^7.7.2",
-    "@babel/runtime-corejs3": "^7.7.2",
-    "rollup": "^1.26.3",
-    "rollup-plugin-babel": "^4.3.3",
-    "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-typescript": "^1.0.1",
-    "rollup-plugin-typescript2": "^0.24.3",
-    "typescript": "^3.7.2"
-  }
+    "@rollup/plugin-typescript": "^4.1.2",
+    "rollup": "^2.15.0",
+    "tslib": "^2.0.0",
+    "typescript": "^3.9.5"
+  },
+  "dependencies": {}
 }

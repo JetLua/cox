@@ -1,12 +1,10 @@
 {
   "compilerOptions": {
     "lib": [
-      "esnext"
+      "esnext",
+      "dom"
     ],
-    "outDir": "./dist",
-    "declaration": true,
-    "declarationDir": "./dist",
-    "module": "esnext",
+    "module": "es6",
     "noImplicitAny": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
