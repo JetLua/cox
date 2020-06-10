@@ -52,7 +52,7 @@ export default function(shapeA: Shape, shapeB: Shape): boolean {
 
     const [m, n] = support(shapeA, shapeB, direction)
     const v = new Vec(m.x + shapeA.x - n.x - shapeB.x, m.y + shapeA.y - n.y - shapeB.y)
-    if (Vec.dot(direction, v) <= 0) return false
+    if (Vec.dot(direction, v) < 0) return false
     queue.push(v)
   }
 }

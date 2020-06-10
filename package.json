@@ -7,7 +7,7 @@
   "types": "dist/type/index.d.ts",
   "scripts": {
     "build": "rm -fr dist & rollup -c",
-    "declaration": "tsc --declaration --declarationDir dist --outDir type ./src/index.ts",
+    "declaration": "tsc --declaration --declarationDir dist/type ./src/index.ts --emitDeclarationOnly",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "browserslist": [
