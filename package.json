@@ -1,6 +1,6 @@
 {
   "name": "@iro/cox",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "dist/cox.min.js",
   "module": "dist/cox.es.js",
