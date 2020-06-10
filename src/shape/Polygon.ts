@@ -5,7 +5,7 @@ export default class {
   public x: number
   public y: number
 
-  constructor({x = 0, y = 0, vertices}: IOption) {
+  constructor({x = 0, y = 0, vertices}: {x?: number, y?: number, vertices?: number[]} = {}) {
     this.x = x
     this.y = y
     this.vertices = vertices || []
@@ -14,10 +14,4 @@ export default class {
   setVertices(vertices: number[]) {
     this.vertices = vertices
   }
-}
-
-interface IOption {
-  x?: number
-  y?: number
-  vertices?: number[]
 }
