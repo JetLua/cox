@@ -18,7 +18,7 @@ export default {
       file: 'dist/cox.es.js'
     },
     {
-      format: 'umd',
+      format: 'iife',
       sourcemap: true,
       name: 'cox',
       file: 'dist/cox.min.js'

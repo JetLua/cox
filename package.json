@@ -1,5 +1,5 @@
 {
-  "name": "cox",
+  "name": "@iro/cox",
   "version": "1.0.0",
   "description": "",
   "main": "dist/cox.min.js",
