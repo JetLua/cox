@@ -10,8 +10,4 @@ export default class {
     this.y = y
     this.vertices = vertices || []
   }
-
-  setVertices(vertices: number[]) {
-    this.vertices = vertices
-  }
 }
