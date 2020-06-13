@@ -1,6 +1,6 @@
 {
   "name": "@iro/cox",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Collision engine may evolve into physical engine.",
   "main": "dist/cox.min.js",
   "module": "dist/cox.es.js",
