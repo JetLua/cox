@@ -7,7 +7,7 @@
   "types": "dist/type/index.d.ts",
   "scripts": {
     "build": "rm -fr dist & rollup -c",
-    "test": "mocha test/",
+    "test": "npm run build && mocha test/",
     "declaration": "tsc --declaration --declarationDir dist/type ./src/index.ts --emitDeclarationOnly"
   },
   "browserslist": [
@@ -21,13 +21,13 @@
   "author": "JetLu",
   "license": "MIT",
   "devDependencies": {
-    "@rollup/plugin-typescript": "^4.1.2",
+    "@rollup/plugin-typescript": "^8.0.0",
     "expect.js": "^0.3.1",
     "mocha": "^8.0.1",
     "rollup": "^2.15.0",
-    "rollup-plugin-terser": "^6.1.0",
+    "rollup-plugin-terser": "^7.0.2",
     "tslib": "^2.0.0",
-    "typescript": "^3.9.5"
+    "typescript": "^4.1.2"
   },
   "dependencies": {}
 }
