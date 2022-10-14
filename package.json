@@ -1,6 +1,6 @@
 {
   "name": "@iro/cox",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Collision engine may evolve into physical engine.",
   "main": "dist/cox.min.js",
   "module": "dist/cox.es.js",
@@ -10,7 +10,7 @@
     "build": "rm -fr dist & rollup -c",
     "build:test": "npm run build && mocha test/",
     "test": "mocha test/",
-    "declaration": "tsc --declaration --declarationDir dist/type ./src/index.ts --emitDeclarationOnly"
+    "tsc": "tsc --target es5 --declaration --declarationDir dist/type ./src/index.ts --emitDeclarationOnly "
   },
   "browserslist": [
     "android >= 5",
