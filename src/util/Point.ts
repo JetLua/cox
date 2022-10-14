@@ -4,8 +4,8 @@ interface IPoint {
 }
 
 class Point implements IPoint {
-  public x: number = 0
-  public y: number = 0
+  x: number = 0
+  y: number = 0
 
   constructor(x = 0, y = 0) {
     this.set(x, y)

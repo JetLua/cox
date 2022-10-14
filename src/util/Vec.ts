@@ -1,10 +1,10 @@
-import {IPoint} from './Point'
+import type {IPoint} from './Point'
 
 const {sqrt} = Math
 
 export default class Vec implements IPoint {
-  public x: number
-  public y: number
+  x = 0
+  y = 0
 
   constructor(x = 0, y = 0) {
     this.set(x, y)
@@ -18,6 +18,10 @@ export default class Vec implements IPoint {
 
   clone() {
     return new Vec(this.x, this.y)
+  }
+
+  copy(v: Vec) {
+    this.set(v.x, v.y)
   }
 
   mul(v: number) {

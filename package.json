@@ -4,10 +4,12 @@
   "description": "Collision engine may evolve into physical engine.",
   "main": "dist/cox.min.js",
   "module": "dist/cox.es.js",
+  "type": "module",
   "types": "dist/type/index.d.ts",
   "scripts": {
     "build": "rm -fr dist & rollup -c",
-    "test": "npm run build && mocha test/",
+    "build:test": "npm run build && mocha test/",
+    "test": "mocha test/",
     "declaration": "tsc --declaration --declarationDir dist/type ./src/index.ts --emitDeclarationOnly"
   },
   "browserslist": [
@@ -21,13 +23,12 @@
   "author": "JetLu",
   "license": "MIT",
   "devDependencies": {
-    "@rollup/plugin-typescript": "^8.0.0",
+    "@rollup/plugin-typescript": "^9.0.1",
     "expect.js": "^0.3.1",
-    "mocha": "^8.0.1",
-    "rollup": "^2.15.0",
+    "mocha": "^10.0.0",
+    "rollup": "^3.1.0",
     "rollup-plugin-terser": "^7.0.2",
     "tslib": "^2.0.0",
     "typescript": "^4.1.2"
-  },
-  "dependencies": {}
+  }
 }

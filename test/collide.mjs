@@ -1,5 +1,5 @@
-const expect = require('expect.js')
-const {collide, Polygon, Circle} = require('../dist/cox.min')
+import expect from 'expect.js'
+import {collide, Polygon, Circle} from '../dist/cox.es.js'
 
 describe('collide', () => {
   let polygon, circle, square
@@ -34,5 +34,15 @@ describe('collide', () => {
 
   it('多边形与正方形碰撞', () => {
     expect(collide(polygon, square)).to.be.ok()
+  })
+})
+
+describe('area', () => {
+  it('计算正方形面积', () => {
+    const square = new Polygon({
+      x: 0, y: 0,
+      vertices: [0, 0, 10, 0, 10, 10, 0, 10]
+    })
+    expect(square.area).to.be(100)
   })
 })

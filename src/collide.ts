@@ -1,10 +1,10 @@
 import {Circle, Polygon} from './shape'
+import type Base from './shape/Base'
 import {Vec, Vec3, IPoint} from './util'
 
-type Shape = Circle | Polygon
 
-export default function(shapeA: Shape, shapeB: Shape): boolean {
-  let direction: Vec
+export default function(shapeA: Base, shapeB: Base): boolean {
+  let direction!: Vec
   const queue: Vec[] = []
 
   while (true) {
@@ -45,7 +45,6 @@ export default function(shapeA: Shape, shapeB: Shape): boolean {
           queue.splice(1, 1)
           direction = acp
         } else return true
-
         break
       }
     }
@@ -57,7 +56,7 @@ export default function(shapeA: Shape, shapeB: Shape): boolean {
   }
 }
 
-function support(shapeA: Shape, shapeB: Shape, direction: Vec) {
+function support(shapeA: Base, shapeB: Base, direction: Vec) {
   return [
     farthest(shapeA, direction),
     farthest(shapeB, direction.clone().mul(-1))
@@ -73,7 +72,7 @@ function triple(v1: IPoint, v2: IPoint, v3: IPoint) {
   return new Vec(e.x, e.y)
 }
 
-function farthest(shape: Shape, direction: Vec) {
+function farthest(shape: Base, direction: Vec) {
   const {r} = shape as Circle
 
   if (r != null) return direction.clone().normalize().mul(r)
@@ -81,7 +80,7 @@ function farthest(shape: Shape, direction: Vec) {
   const {vertices} = shape as Polygon
 
   let max = -Infinity
-  let p: Vec
+  let p: Vec = new Vec()
 
   for (let i = 0; i < vertices.length; i+= 2) {
     const v = new Vec(vertices[i], vertices[i + 1])
@@ -90,7 +89,7 @@ function farthest(shape: Shape, direction: Vec) {
     if (d <= max) continue
 
     max = d
-    p = v
+    p.copy(v)
   }
 
   return p
